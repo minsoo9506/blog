@@ -27,14 +27,14 @@ jobs:
       #     git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
       #     # run 다음 내용들은 submodule을 최신으로 udapte한것을 가져오는 내용 + a이다.
           
-      #3. npm install 사용하는 theme가 sass/scss를 사용하는 경우 node.js를 설치하고 npm install 과정이 필요하다.
-      - name: npm install
-        uses: actions/checkout@v2
+      # #3. npm install 사용하는 theme가 sass/scss를 사용하는 경우 node.js를 설치하고 npm install 과정이 필요하다.
+      # - name: npm install
+      #   uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12'
-      - run: npm install
+      # - uses: actions/setup-node@v1
+      #   with:
+      #     node-version: '12'
+      # - run: npm install
       
       #4. Hugo 설치 
       - name: Setup Hugo
