@@ -52,6 +52,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
+          external_repository: minsoo9506/minsoo9506.github.io
           github_token: ${{ secrets.BLOG }}
           publish_branch: master
           publish_dir: ./public
