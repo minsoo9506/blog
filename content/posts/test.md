@@ -6,3 +6,16 @@ tags: ["tag"]
 categories: ["cate"]
 ---
 hi
+
+# part1
+## part1-1
+
+`code`
+
+```python
+print("hello")
+```
+
+$\alpha=1$ 됩니다.
+
+$$\frac{1}{2}$$
