@@ -2,9 +2,13 @@
 title: "Chap1"
 date: 2021-11-26T09:21:26+09:00
 draft: false
-tags: ["PRML"]
-categories: ["PRML"]
+tags: ["Test"]
+categories: ["Test"]
 ---
+
+test 용
+
+<!--more-->
 
 what the heck~!
 
