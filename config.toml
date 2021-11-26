@@ -91,11 +91,11 @@ theme = "LoveIt"
       # Gravatar Email for preferred avatar in home page
       gravatarEmail = ""
       # URL of avatar shown in home page
-      avatarURL = "/images/human-brain.png"
+      avatarURL = "/blog-imgs/human-brain.png"
       # LoveIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)
       title = "All models are wrong"
       # subtitle shown in home page
-      subtitle = "but some are useful"
+      subtitle = "But some are useful"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
