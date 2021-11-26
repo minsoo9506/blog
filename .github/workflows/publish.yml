@@ -17,7 +17,10 @@ jobs:
       
       #1. 가상머신으로 checkout
       - uses: actions/checkout@v2
-      
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          
       # #2. theme를 submodule로 등록했는데 그것도 checkout
       # - name: Checkout submodules
       #   shell: bash
