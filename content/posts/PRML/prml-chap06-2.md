@@ -1,6 +1,6 @@
 ---
 title: "[PRML] Chapter6 - Kernel Method (2) : GP"
-date: 2021-11-26T09:59:46+09:00
+date: 2021-11-27T10:59:46+09:00
 draft: false
 tags: ["PRML", "Gassian Process"]
 categories: ["PRML"]
@@ -94,7 +94,9 @@ $$Y = (y_1, y_2,...,y_n)$$
 
 $$E[Y] = E[\Phi w] = \Phi E[w] = 0$$
 
-$$cov(Y) = E[YY^T] = E[\Phi w w^T \Phi^T] \\= \Phi E[ww^T]\Phi^T \\= \frac{1}{\alpha} \Phi \Phi^T$$
+$$cov(Y) = E[YY^T] = E[\Phi w w^T \Phi^T]$$
+
+$$= \Phi E[ww^T]\Phi^T = \frac{1}{\alpha} \Phi \Phi^T$$
 
 $$K_{nm} = k(x_n,x_m) = \frac{1}{\alpha} \phi (x_n)^T \phi (x_m)$$
 
@@ -127,11 +129,11 @@ $$\ln P(Z) = \ln P(T|Y) + \ln P(Y) \\ = - \frac{1}{2} Y^TK^{-1}Y - \frac{1}{2}(T
 
 여기서 변수는 $T,Y$이다. 여기서 second order term을 보면 (second order term을 찾으면 covariance를 찾을 수 있기에)
 
-$$ = \frac{1}{2} \begin{pmatrix} Y \\ T \end{pmatrix}^T \begin{pmatrix} K^{-1} + \beta I & -\beta I  \\ - \beta I & \beta I \end{pmatrix} \begin{pmatrix} Y \\ T \end{pmatrix} \\ = \frac{1}{2}Z^T R Z$$
+$$ = \frac{1}{2} \begin{pmatrix} Y \\\ T \end{pmatrix}^T \begin{pmatrix} K^{-1} + \beta I & -\beta I  \\\ - \beta I & \beta I \end{pmatrix} \begin{pmatrix} Y \\\ T \end{pmatrix}  = \frac{1}{2}Z^T R Z$$
 
 $R$은 precision matrix가 된다. 이를 inverse 하면 (공식이용)
 
-$$R^{-1} = \begin{pmatrix} K & K \\ K & (\beta I)^{-1} + K \end{pmatrix}$$
+$$R^{-1} = \begin{pmatrix} K & K \\\ K & (\beta I)^{-1} + K \end{pmatrix}$$
 
 $\ln (Z)$의 first order term은 없다. mean이 0라는 것을 알 수 있다. 따라서 최종 결과는
 
@@ -165,7 +167,7 @@ $$P(T_{N+1}) = N(0, cov_{N+1})$$
 
 mean은 1차원이 늘어난 zero vector이고 cov는 행과 열이 하나씩 들어간 형태일 것이다. 이는 kernel function과 $\beta$를 통해 어렵지 않게 구할 수 있다.
 
-$$cov_{N+1} = \begin{pmatrix} cov_N & k  \\ k^T & K_{(N+1)(N+1)}+\beta^{-1} \end{pmatrix}$$
+$$cov_{N+1} = \begin{pmatrix} cov_N & k  \\\ k^T & K_{(N+1)(N+1)}+\beta^{-1} \end{pmatrix}$$
 
 이제 joint distribution을 구했으니 conditional distribution을 구할 수 있다. (공식 PRML chap2에 나온다)
 
