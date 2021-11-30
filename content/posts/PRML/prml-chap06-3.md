@@ -1,6 +1,6 @@
 ---
 title: "[PRML] Bayesian Optimization"
-date: 2021-11-27T11:30:01+09:00
+date: 2021-11-29T11:30:01+09:00
 draft: false
 tags: ["Bayesian Optimization"]
 categories: ["PRML"]

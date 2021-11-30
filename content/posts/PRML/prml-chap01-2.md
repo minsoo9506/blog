@@ -3,6 +3,7 @@ title: "[PRML] Chapter1 - Introduction (2)"
 date: 2021-11-26T10:21:26+09:00
 draft: false
 categories: ["PRML"]
+tags: ["Decision Theory"]
 ---
 
 Decision Theory에 대해 알아봅시다.

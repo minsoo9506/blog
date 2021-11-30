@@ -1,6 +1,6 @@
 ---
 title: "[PRML] Chapter6 - Kernel Method (2) : GP"
-date: 2021-11-27T10:59:46+09:00
+date: 2021-11-29T10:59:46+09:00
 draft: false
 tags: ["PRML", "Gassian Process"]
 categories: ["PRML"]
