@@ -1,6 +1,6 @@
 ---
 title: "[인과추론] Introduction"
-date: 2021-12-04T09:01:00+00:00
+date: 2021-12-03T11:01:00+00:00
 draft: false
 categories: ["Causality"]
 tags: ["Correlation"]
@@ -33,7 +33,7 @@ Simpson's paradox는 주로 observational data에 주로 발생하는 경우가 
   - 예를 들어, 의사가 상태가 Mild한 환자에게는 A약을 투여하고 상태가 Severe한 환자에게는 B약을 투여한 상황을 생각해보자. 이미 Severe한 환자는 사망할 확률이 높았고 따라서 A약의 사망률이 더 낮게 나온 것이다. (*Condition confounds the effect of treatment on morality*) 이 예시에서처럼 treatment와 outcome 모두에 영향을 미치는 변수를 **confounder** 라고 부른다.
 
 <center>
-    <img src="~/blog-imgs/Lec_01_02.PNG"  width="200">
+    <img src="https://github.com/minsoo9506/blog/blob/master/static/blog-imgs/Lec_01_02.PNG?raw=true"  width="200">
 </center>
 
 

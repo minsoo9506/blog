@@ -1,6 +1,6 @@
 ---
 title: "[인과추론] Potential Outcomes Framework"
-date: 2021-12-04T09:02:00+00:00
+date: 2021-12-03T11:02:00+00:00
 draft: false
 categories: ["Causality"]
 tags: ["Potential Outcome"]
@@ -46,13 +46,11 @@ $$E[Y|T=1] - E[Y|T=0]$$
 
 $$(Y(1),Y(0)) \perp T$$
 
-$$$$
-
 또 다른 시점으로는 (계산, 수학적으로 같은 의미)
 - exchangeability :
   - 두 그룹을 바꿔서 treatment나 not treatment를 해도 똑같은 결과를 나오는 가정
 
-$$E[Y(1)|T=1] = E[Y(1)|T=0] \rightarrow = E[Y(1)] \\ E[Y(0)|T=1] = E[Y(0)|T=0] \rightarrow = E[Y(0)]$$
+$$E[Y(1)|T=1] = E[Y(1)|T=0] \rightarrow = E[Y(1)] \\\ E[Y(0)|T=1] = E[Y(0)|T=0] \rightarrow = E[Y(0)]$$
 
 결국 treatment, non treatment 두 그룹이 comparable해야한다는 것이다. 위의 가정을 만족한다면 우리는 아래와 같은 식을 얻을 수 있다.
 
@@ -79,7 +77,8 @@ graphical하게 표현하면 아래와 같다.
     <img src="https://github.com/minsoo9506/blog/blob/master/static/blog-imgs/Lec_02_01.PNG?raw=true"  width="200">
 </center>
 
-$$E[Y(1) - Y(0) | X] = E[Y(1)|X] - E[Y(0)|X]\\ = E[Y(1)|T=1,X]-E[Y(0)|T=0,X]$$
+$$E[Y(1) - Y(0) | X] = E[Y(1)|X] - E[Y(0)|X] $$
+$$ = E[Y(1)|T=1,X]-E[Y(0)|T=0,X]$$
 
 marginal effect는 
 
@@ -97,7 +96,9 @@ $$0 < P(T=1|X=x) < 1$$
 
 $$E[Y(1) - Y(0)] = E_X [E[Y|T=1, X] - E[Y|T=0, X]]$$
 
-$$\sum_x P(X=x)(\sum_y y P(Y=y|T=1,X=x) - \sum_y y P(Y=y|T=0,X=x))\\=\sum_x P(X=x)(\sum_y y \frac{P(Y=y, T=1,X=x)}{P(T=1 | X=x)P(X=x)} - \sum_y y \frac{P(Y=y,T=0,X=x)}{P(T=0 | X=x)P(X=x)})$$
+$$\sum_x P(X=x)(\sum_y y P(Y=y|T=1,X=x) - \sum_y y P(Y=y|T=0,X=x)) $$
+
+$$ =\sum_x P(X=x)(\sum_y y \frac{P(Y=y, T=1,X=x)}{P(T=1 | X=x)P(X=x)} - \sum_y y \frac{P(Y=y,T=0,X=x)}{P(T=0 | X=x)P(X=x)})$$
 
 위 식에서 분모에 $P(T=1\|X=x)+P(T=0\|X=x)=1$이다. 따라서 $P(T=1\|X=x)$이 0 또는 1이면 문제가 생긴다.
 
@@ -114,7 +115,7 @@ $$Y_i (t_1, t_2,...t_i,..., t_n) = Y_i (t_i)$$
 - Consistency
   - 우리가 관측하는 $Y$의 값이 관측된 treatment $T$의  potential outcome이여야 한다.
 
-$$T=t \rightarrow Y = Y(t)\\Y = Y(T)$$
+$$T=t \rightarrow Y = Y(t) \\\ Y = Y(T)$$
 
 Consistency에 대해 예를 들어보자. 
 - 강아지와 함께 살면 행복지수가 높아질 것이다.
@@ -123,7 +124,7 @@ Consistency에 대해 예를 들어보자.
 
 consistency 가정이 성립한다면 
 
-$$E[Y(1) - Y(0) | X] = E[Y(1)|X] - E[Y(0)|X]\\ = E[Y(1)|T=1,X]-E[Y(0)|T=0,X]\\=E[T|T=1,X] - E[Y|T=0,X]$$
+$$E[Y(1) - Y(0) | X] = E[Y(1)|X] - E[Y(0)|X] \\\ = E[Y(1)|T=1,X]-E[Y(0)|T=0,X] \\\ =E[T|T=1,X] - E[Y|T=0,X]$$
 
 지금까지의 가정들을 총집합해보면
 - Unconfoundedness
@@ -131,7 +132,7 @@ $$E[Y(1) - Y(0) | X] = E[Y(1)|X] - E[Y(0)|X]\\ = E[Y(1)|T=1,X]-E[Y(0)|T=0,X]\\=E
 - No interference
 - Consistency
 
-$$E[Y(1) - Y(0)] = E[Y(1)] - E[Y(0)]\;\text{(linearity of expectation)}\\=E_X [E[Y(1)|X] - E[Y(0)|X]]\;\text{(law of iterated expectations)}\\=E_X [E[Y(1)|T=1,X] - E[Y(0)|T=0,X]]\;\text{(unconfoundedness, positivity)}\\=E_X [E[Y|T=1,X] - E[Y|T=0,X]]\;\text{(consistency)}$$
+$$E[Y(1) - Y(0)] = E[Y(1)] - E[Y(0)]\\;\text{(linearity of expectation)} \\\ =E_X [E[Y(1)|X] - E[Y(0)|X]] \\;\text{(law of iterated expectations)} \\\ =E_X [E[Y(1)|T=1,X] - E[Y(0)|T=0,X]] \\;\text{(unconfoundedness, positivity)} \\\ =E_X [E[Y|T=1,X] - E[Y|T=0,X]] \\; \text{(consistency)}$$
 
 최종적으로 우리는 통계적인 추론을 통해 (최종식이 모두 확률변수, 평균 등으로 이루어진 식) 우리가 궁금해했던 ATE를 구할 수 있게 된다.
 

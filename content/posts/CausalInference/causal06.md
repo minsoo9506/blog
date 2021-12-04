@@ -1,6 +1,6 @@
 ---
 title: "[인과추론] Estimation"
-date: 2021-12-04T09:06:00+00:00
+date: 2021-12-03T11:06:00+00:00
 draft: false
 categories: ["Causality"]
 tags: ["Estimation"]
@@ -79,7 +79,9 @@ $$\tau = E[Y(1)-Y(0)] = E[\frac{1(T=1)Y}{e(w)}] - E[\frac{1(T=0)Y}{1-e(w)}]$$
 
 - proof
 
-$$E[Y(t)] = E[E[Y|t, W]]\;\; \text{(given unconfoundedness and positivity)} \\= \sum_w \sum_y y P(y|t,w)P(w) \\= \sum_w \sum_y y P(y|t,w)P(w) \frac{P(t|w)}{P(t|w)} \\= \sum_w \sum_y y P(y,t,w)\frac{1}{P(t|w)} \\=\sum_w E[1(T=t,W=w)Y]\frac{1}{P(t|w)} \\= E[\frac{1(T=t)Y}{P(t|W)}]$$
+$$E[Y(t)] = E[E[Y|t, W]] \\; \text{(given unconfoundedness and positivity)} $$
+
+$$ = \sum_w \sum_y y P(y|t,w)P(w) \\\ = \sum_w \sum_y y P(y|t,w)P(w) \frac{P(t|w)}{P(t|w)} \\\ = \sum_w \sum_y y P(y,t,w)\frac{1}{P(t|w)} \\\ = \sum_w E[1(T=t,W=w)Y]\frac{1}{P(t|w)} \\\ = E[\frac{1(T=t)Y}{P(t|W)}]$$
 
 이외에도
 - Doubly Robust Method

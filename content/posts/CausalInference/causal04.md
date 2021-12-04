@@ -1,6 +1,6 @@
 ---
 title: "[인과추론] Causal Models"
-date: 2021-12-04T09:04:00+00:00
+date: 2021-12-03T11:04:00+00:00
 draft: false
 categories: ["Causality"]
 tags: ["Causal Model"]
@@ -53,7 +53,7 @@ direct path를 통한 causal flow가 아닌 non-causal association flow가 지�
 
 $W$가 backdoor criterion을 만족한다면
 
-$$P(y|do(t)) = \sum_w P(y|do(t),w)P(w|do(t))\\=\sum_w P(y|t,w)P(w|do(t))\\=\sum_w P(y|t,w)P(w)$$
+$$P(y|do(t)) = \sum_w P(y|do(t),w)P(w|do(t)) \\\ =\sum_w P(y|t,w)P(w|do(t)) \\\ =\sum_w P(y|t,w)P(w)$$
 
 - Backdoor Adjustment
   - modularity assumtion, $W$가 backdoor criterion을 만족하고 positivity가 성립하면 causal effect $T$ on $Y$를 identify할 수 있다:
@@ -79,7 +79,7 @@ $f$에 대해서 특정한 모델로 정의하지 않으면 비모수(nonparamet
 
 위의 그림에서 structual equation:
 
-$$B:=f_B(A,U_B)\\C:=f_C(A,B,U_C)\\D:=f_D(A,C,U_D)$$
+$$B:=f_B(A,U_B) \\\ C:=f_C(A,B,U_C) \\\ D:=f_D(A,C,U_D)$$
 
 여기서 known variable을 *endogenous* variable, unknown variable을 *exogenous* variable이라고 한다. 그렇다면 이제 SCM의 정의를 알아보자.
 

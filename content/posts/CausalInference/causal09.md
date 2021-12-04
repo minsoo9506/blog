@@ -1,6 +1,6 @@
 ---
 title: "[인과추론] Difference-in-Difference"
-date: 2021-12-04T09:09:00+00:00
+date: 2021-12-03T11:09:00+00:00
 draft: false
 categories: ["Causality"]
 tags: ["DID"]
@@ -50,11 +50,11 @@ $$E[Y_0 (1) - Y_0 (0) | T=1] = 0$$
   - Given consistency,
 parallel trends, and no pretreatment effect, we have the following:
 
-$$E[Y_1 (1) - Y_1 (0) | T=1]\\= (E[Y_1|T=1]-E[Y_0 | T=1]) - (E[Y_1|T=0] - E[Y_0|T=0])$$
+$$E[Y_1 (1) - Y_1 (0) | T=1] \\\ = (E[Y_1|T=1]-E[Y_0 | T=1]) - (E[Y_1|T=0] - E[Y_0|T=0])$$
 
 - proof
 
-$$E[Y_1 (1) - Y_1 (0) | T=1] = E[Y_1 (1) | T=1] - E[Y_1 (0) | T=1]\\=E[Y_1 | T=1] - E[Y_1 (0) | T=1]\;\text{(consistency)}$$
+$$E[Y_1 (1) - Y_1 (0) | T=1] = E[Y_1 (1) | T=1] - E[Y_1 (0) | T=1] \\\ =E[Y_1 | T=1] - E[Y_1 (0) | T=1] \\; \text{(consistency)}$$
 
 위의 식에서 두 번째 항 $E[Y_1 (0) \| T=1]$은 counterfactual이고 이를 알 수 없지만 parallel trends assumption으로 구할 수 있다.
 

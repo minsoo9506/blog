@@ -1,6 +1,6 @@
 ---
 title: "[인과추론] Instrumental Variables"
-date: 2021-12-04T09:08:00+00:00
+date: 2021-12-03T11:08:00+00:00
 draft: false
 categories: ["Causality"]
 tags: ["Instrumental Variables"]
@@ -26,7 +26,7 @@ $Z$는 3가지 특징이 있다.
 
 $$Y := \delta T + \alpha_u U$$
 
-$$E[Y|Z=1] - E[Y|Z=0]\\= E[\delta T + \alpha_u U | Z=1] - E[\delta T + \alpha_u U | Z = 0]\\= \delta (E[T|Z=1]-E[T|Z=0]) + \alpha_u (E[U|Z=1]-E[U|Z=0])\;\text{Exclusion Restriction} \\= \delta (E[T|Z=1]-E[T|Z=0]) + \alpha_u (E[U] - E[U])\;\text{instrumental unconfoundedness}\\=\delta(E[T|Z=1] - E[T|Z=0])$$
+$$E[Y|Z=1] - E[Y|Z=0] \\\ = E[\delta T + \alpha_u U | Z=1] - E[\delta T + \alpha_u U | Z = 0] \\\ = \delta (E[T|Z=1]-E[T|Z=0]) + \alpha_u (E[U|Z=1]-E[U|Z=0]) \\; \text{Exclusion Restriction} \\\ = \delta (E[T|Z=1]-E[T|Z=0]) + \alpha_u (E[U] - E[U])\\;\text{instrumental unconfoundedness} \\\ =\delta(E[T|Z=1] - E[T|Z=0])$$
 
 $$\therefore \delta = \frac{E[Y|Z=1] - E[Y|Z=0]}{E[T|Z=1] - E[T|Z=0]}$$
 
@@ -36,7 +36,7 @@ $$\hat{\delta} = \frac{\frac{1}{n_1}\sum_{i:z_i = 1}Y_i - \frac{1}{n_0}\sum_{i:z
 
 이번에는 $T,Z$가 continuous인 경우를 살펴보자. outcome에 대한 Linear assumption은 동일하다.
 
-$$Cov(Y,Z) = E[YZ] - E[Y]E[Z]\\= E[(\delta T + \alpha_u U)Z] - E[\delta T + \alpha_u U]E[Z]\\= \delta E[TZ] + \alpha_u E[UZ] - \delta E[T]E[Z] - \alpha_u E[U]E[Z]\\= \delta (E[TZ] - E[T]E[Z]) + \alpha_u (E[UZ] - E[U]E[Z])\\= \delta Cov(T,Z) + \alpha_u Cov(U,Z)\\= \delta Cov(T,Z)$$
+$$Cov(Y,Z) = E[YZ] - E[Y]E[Z] \\\ = E[(\delta T + \alpha_u U)Z] - E[\delta T + \alpha_u U]E[Z] \\\ = \delta E[TZ] + \alpha_u E[UZ] - \delta E[T]E[Z] - \alpha_u E[U]E[Z] \\\ = \delta (E[TZ] - E[T]E[Z]) + \alpha_u (E[UZ] - E[U]E[Z]) \\\ = \delta Cov(T,Z) + \alpha_u Cov(U,Z) \\\ = \delta Cov(T,Z)$$
 
 $$\therefore \delta = \frac{Cov(Y,Z)}{Cov(T,Z)}$$
 
@@ -81,19 +81,19 @@ $$E[Y(1) - Y(0) | T(1)=1, T(0)=0] = \frac{E[Y|Z=1] - E[Y|Z=0]}{E[T|Z=1] - E[T|Z=
 
 - proof)
 
-$$E[Y(Z=1) - Y(Z=0)] = \\ E[Y(Z=1)-Y(Z=0)|T(1)=1,T(0)=0]P(T(1)=1,T(0)=0)\\+E[Y(Z=1)-Y(Z=0)|T(1)=0,T(0)=1]P(T(1)=0,T(0)=1)\\+E[Y(Z=1)-Y(Z=0)|T(1)=1,T(0)=1]P(T(1)=1,T(0)=1)\\+E[Y(Z=1)-Y(Z=0)|T(1)=0,T(0)=0]P(T(1)=0,T(0)=0)$$
+$$E[Y(Z=1) - Y(Z=0)] = \\\ E[Y(Z=1)-Y(Z=0)|T(1)=1,T(0)=0]P(T(1)=1,T(0)=0) \\\ +E[Y(Z=1)-Y(Z=0)|T(1)=0,T(0)=1]P(T(1)=0,T(0)=1) \\\ + E[Y(Z=1)-Y(Z=0)|T(1)=1,T(0)=1]P(T(1)=1,T(0)=1) \\\ +E[Y(Z=1)-Y(Z=0)|T(1)=0,T(0)=0]P(T(1)=0,T(0)=0)$$
 
 여기서 defier가 일어날 확률이 0이므로 없어진다. always, never-takers 또한 $E$부분이 0이 된다.
 
-$$\therefore E[Y(Z=1) - Y(Z=0)] \\= E[Y(Z=1)-Y(Z=0)|T(1)=1,T(0)=0]P(T(1)=1,T(0)=0)$$
+$$\therefore E[Y(Z=1) - Y(Z=0)] \\\ = E[Y(Z=1)-Y(Z=0)|T(1)=1,T(0)=0]P(T(1)=1,T(0)=0)$$
 
 이제 이를 정리하면
 
-$$E[Y(Z=1)-Y(Z=0)|T(1)=1,T(0)=0] \\= \frac{E[Y(Z=1) - Y(Z=0)]}{P(T(1)=1,T(0)=0)}$$
+$$E[Y(Z=1)-Y(Z=0)|T(1)=1,T(0)=0] \\\ = \frac{E[Y(Z=1) - Y(Z=0)]}{P(T(1)=1,T(0)=0)}$$
 
 위의 식에서 분자는 instrumental unconfoundedness assumption으로 인해 $E[Y\|Z=1] - E[Y\|Z=0]$이 된다. 분모는 compliers의 확률이므로 1에서 compliers가 아닐 확률을 빼서 진행하자. 이때 monotonicity로 인해 defier의 확률은 0이고 always, never-takers의 확률은 각각 $P(T=1\|Z=0),P(T=0\|Z=1)$이 된다.
 
-$$P(T(1)=1,T(0)=0) \\= 1 - P(T=0|Z=1) -  P(T=1|Z=0) \\= 1 - (1- P(T=1|Z=1)) - P(T=1|Z=0) \\= P(T=1|Z=1)-P(T=1|Z=0) \\= E[T|Z=1] - E[T|Z=0]$$
+$$P(T(1)=1,T(0)=0) \\\ = 1 - P(T=0|Z=1) -  P(T=1|Z=0) \\\ = 1 - (1- P(T=1|Z=1)) - P(T=1|Z=0) \\\ = P(T=1|Z=1)-P(T=1|Z=0) \\\ = E[T|Z=1] - E[T|Z=0]$$
 
 linearity assumption에서 구한 결과와 같다. 두 가지 가정 모두 우리에게 Wald estimand를 구할 수 있게 해주었다. Monotonicity의 경우, 이는 ATE는 아니다.  nonparametric하게 ATE는 못구해도 monotonicity가정으로 LATE는 구할 수 있음을 알게 되었다. 다만 monotonicity가 만족한다는 보장은 없는 한계도 존재한다.
 

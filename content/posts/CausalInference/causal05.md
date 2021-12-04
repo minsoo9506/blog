@@ -1,6 +1,6 @@
 ---
 title: "[인과추론] Randomized Experiments and Identification"
-date: 2021-12-04T09:05:00+00:00
+date: 2021-12-03T11:05:00+00:00
 draft: false
 categories: ["Causality"]
 tags: ["Randomized Experiment"]
@@ -25,14 +25,14 @@ $$P(X|T=1) = P(X|T=0) = P(X)$$
 
 - Covariate balance implies association is causation
 
-$$P(y|do(t)) = \sum_x P(y|t,x)P(x)\\ = \sum_x \frac{P(y|t,x)P(t|x)P(x)}{P(t|x)}\\ = \sum_x \frac{P(y,t,x)}{P(t|x)}\\ = \sum_x \frac{P(y,t,x)}{P(t)}\\ = \sum_x P(y,x|t)\\ =P(y|t)$$
+$$P(y|do(t)) = \sum_x P(y|t,x)P(x) \\\ = \sum_x \frac{P(y|t,x)P(t|x)P(x)}{P(t|x)}\\ = \sum_x \frac{P(y,t,x)}{P(t|x)} \\\ = \sum_x \frac{P(y,t,x)}{P(t)} \\\ = \sum_x P(y,x|t)\\ =P(y|t)$$
 
 - Exchangeability
   - RCT를 exchangeability의 측면에서 살펴보자. RCT를 하면 exchangeability가 성립할 수 밖에 없다. 동전을 던져서 treatment를 할지 말지 결정하기 때문에 당연히 아래의 식이 성립하고 association이 causation이 되는 것이다.
 
 $$E[Y(1)|T=1] = E[Y(1)|T=0] \\ E[Y(0)|T=0] = E[Y(0)|T=1]$$
 
-$$E[Y(1)]-E[Y(0)] = E[Y(1)|T=1] - E[Y(0)|T=0]\\=E[Y|T=1] = E[Y|T=0]$$
+$$E[Y(1)]-E[Y(0)] = E[Y(1)|T=1] - E[Y(0)|T=0] \\\ =E[Y|T=1] = E[Y|T=0]$$
 
 - No backdoor paths
   - graphical causal model에서도 RCT를 통해 association이 causation이 된다. $T$의 incoming edges가 사라지기 때문이다. 따라서 backdoor path들도 사라지고 association이 causal이 되는 것이다.
@@ -41,7 +41,7 @@ $$E[Y(1)]-E[Y(0)] = E[Y(1)|T=1] - E[Y(0)|T=0]\\=E[Y|T=1] = E[Y|T=0]$$
 아래의 그림처럼 $W$가 unobserved인 경우 backdoor path를 막을 수 없고 따라서 causal association도 구할 수 없게 된다. 그러면 어떻게 할까? Frontdoor adjustment!
 
 <center>
-    <img src="https://github.com/minsoo9506/blog/blob/master/static/blog-imgs/Lec_05_01.PNG?raw=true"  width="200">
+    <img src="https://github.com/minsoo9506/blog/blob/master/static/blog-imgs/Lec_05_01.PNG?raw=true"  width="300">
 </center>
 
 위의 그림에서 mediator $M$에 집중하면 된다. 과정은 아래와 같다.
@@ -70,13 +70,13 @@ $$P(w,m,y|do(t))=P(w)P(m|t)P(y|w,m)$$
 
 $w,m$에 대해 marginalize하면
 
-$$\sum_m \sum_w P(w,m,y|do(t)) = \sum_m \sum_w P(w)P(m|t)P(y|w,m) \\ P(y|do(t)) = \sum_m P(m|t) \sum_w P(w)P(y|w,m) $$
+$$\sum_m \sum_w P(w,m,y|do(t)) = \sum_m \sum_w P(w)P(m|t)P(y|w,m) \\\ P(y|do(t)) = \sum_m P(m|t) \sum_w P(w)P(y|w,m) $$
 
 그런데 우항에 unobserved $w$가 있기에 marginalization을 진행할 수 없다. 따라서 우리는 $w$를 식에서 없애는 작업이 필요할 것이다.
 
 그림에서 $T$가 주어진다면 $P(w\|t)=P(w\|t,m)$이므로
 
-$$P(y|do(t)) = \sum_m P(m|t) \sum_w P(w)P(y|w,m)\\= \sum_m P(m|t) \sum_w P(y|w,m)\sum_{t'}P(w|t')P(t')\\ = \sum_m P(m|t) \sum_w P(y|w,m)\sum_{t'}P(w|t',m)P(t') \\ = \sum_m P(m|t) \sum_{t'}P(t') \sum_w P(y|w,m)P(w|t',m) \\ = \sum_m P(m|t) \sum_{t'}P(t') \sum_w P(y|w,m,t')P(w|t',m)\\ = \sum_m P(m|t) \sum_{t'}P(t') \sum_w P(y,w|m,t')\\=\sum_m P(m|t) \sum_{t'}P(t')P(y|m,t')$$
+$$P(y|do(t)) = \sum_m P(m|t) \sum_w P(w)P(y|w,m) \\\ = \sum_m P(m|t) \sum_w P(y|w,m)\sum_{t'}P(w|t')P(t') \\\ = \sum_m P(m|t) \sum_w P(y|w,m)\sum_{t'}P(w|t',m)P(t') \\\ = \sum_m P(m|t) \sum_{t'}P(t') \sum_w P(y|w,m)P(w|t',m) \\\ = \sum_m P(m|t) \sum_{t'}P(t') \sum_w P(y|w,m,t')P(w|t',m) \\\ = \sum_m P(m|t) \sum_{t'}P(t') \sum_w P(y,w|m,t') \\\ =\sum_m P(m|t) \sum_{t'}P(t')P(y|m,t')$$
 
 - Frontdoor Adjustment
   - 만약 $(T,M,Y)$이 the frontdoor

@@ -1,6 +1,6 @@
 ---
 title: "[인과추론] The Flow of Causation and Association in Graphs"
-date: 2021-12-04T09:03:00+00:00
+date: 2021-12-03T11:03:00+00:00
 draft: false
 categories: ["Causality"]
 tags: ["Causal Graph"]
@@ -80,9 +80,9 @@ Minimality assumption을 통해 dependency도 다룰 수 있으므로 우리는 
 - Chains, Forks : independence
   - $X_2$가 given, $P(X_1,X_3 \| X_2)=P(X_1 \| X_2)P(X_3 \| X_2)$
 
-$$\text{Chain: }P(X_1,X_3 | X_2) = \frac{P(X_1,X_2,X_3)}{P(X_2)}\\=\frac{P(X_1)P(X_2|X_1)P(X_3|X_2)}{P(X_2)}=P(X_1 | X_2)P(X_3 | X_2)$$
+$$\text{Chain: }P(X_1,X_3 | X_2) = \frac{P(X_1,X_2,X_3)}{P(X_2)} \\\ =\frac{P(X_1)P(X_2|X_1)P(X_3|X_2)}{P(X_2)}=P(X_1 | X_2)P(X_3 | X_2)$$
 
-$$\text{Forks: } P(X_1,X_3 | X_2) =  \frac{P(X_1,X_2,X_3)}{P(X_2)}\\=\frac{P(X_2)P(X_1|X_2)P(X_3|X_2)}{P(X_2)}=P(X_1 | X_2)P(X_3 | X_2)$$
+$$\text{Forks: } P(X_1,X_3 | X_2) =  \frac{P(X_1,X_2,X_3)}{P(X_2)} \\\ =\frac{P(X_2)P(X_1|X_2)P(X_3|X_2)}{P(X_2)}=P(X_1 | X_2)P(X_3 | X_2)$$
 
 위에서 independent한 상황의 경우 blocked path라고 하고 반대는 unblock path라고 부른다.
 
@@ -92,7 +92,7 @@ $$\text{Forks: } P(X_1,X_3 | X_2) =  \frac{P(X_1,X_2,X_3)}{P(X_2)}\\=\frac{P(X_2
     - conditioning on the collider $\rightarrow$ unblocked path
     - conditioning을 하지 않으면 아래의 식처럼 block path가 존재한다. (independence)
 
-$$P(X_1, X_3) = \sum_{X_2} P(X_1, X_2, X_3)\\=\sum_{X_2} P(X_1)P(X_3)P(X_2|X_1,X_3)\\=P(X_1)P(X_3) \sum_{X_2} P(X_2|X_1,X_3)\\$$
+$$P(X_1, X_3) = \sum_{X_2} P(X_1, X_2, X_3) \\\ =\sum_{X_2} P(X_1)P(X_3)P(X_2|X_1,X_3) \\\ =P(X_1)P(X_3) \sum_{X_2} P(X_2|X_1,X_3)$$
 
   - conditioning on descendants of colliders는? 이 또한 association을 야기한다.
 
