@@ -1,5 +1,5 @@
 ---
-title: "[PRML] Chapter 14 : Combining Models"
+title: "[PRML] Chapter14 - Combining Models"
 date: 2021-11-29T11:40:01+09:00
 draft: false
 tags: ["Ensemble"]
