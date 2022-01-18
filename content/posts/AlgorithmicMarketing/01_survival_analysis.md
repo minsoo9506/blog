@@ -1,6 +1,6 @@
 ---
 title: "[Algorithmic Marketing] 생존분석 기본개념"
-date: 2021-01-06T09:00:00+00:00
+date: 2022-01-06T09:00:00+00:00
 draft: false
 categories: ["Algorithmic Marketing"]
 tags: ["생존분석"]
