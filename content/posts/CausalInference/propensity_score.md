@@ -1,5 +1,5 @@
 ---
-title: "[인과추론] Propensity Score"
+title: "[Causality] Propensity Score"
 date: 2022-01-20T09:00:00+00:00
 draft: false
 categories: ["Causality"]
