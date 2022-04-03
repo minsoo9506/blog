@@ -6,7 +6,7 @@ categories: ["Causality"]
 tags: ["DoWhy"]
 ---
 
-MS의 causal inference를 위한 library DoWhy에 대해 알아보자
+MS의 causal inference를 공개한 library DoWhy에 대해 알아보자
 
 <!--more-->
 DoWhy는 causality에 관련하여 다양한 기능을 제공한다. 이를 사용하는 tutorial을 진행하면서 DoWhy에 대해 이해하고 observational data를 이용한 causal inference의 과정에 대해 이해하고자 한다.
