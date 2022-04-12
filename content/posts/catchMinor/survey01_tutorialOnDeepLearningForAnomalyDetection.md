@@ -109,31 +109,31 @@ Deep Learning for Anomaly Detection - Challenges, Methods tutorial 정리
   - assumption
     - normal instances can be better reconstructed from compressed feature space than anomalies
   - gerneral framewok
-    - 1. Bottleneck architecture + reconstruction loss
-    - 2. The larger reconstruction errors the more abnormal
+      1. Bottleneck architecture + reconstruction loss
+      2. The larger reconstruction errors the more abnormal
 - GAN
   - assumption
     - Normal data instances can be better generated than anomalies from the latent feature space of the generative network in GANs
   - general framework
-    - 1. Train a GAN-based model
-    - 2. Calculate anomaly scores by looking into the difference bewteen an input instance and its counterpart generated from the latent space of the generator
+      1. Train a GAN-based model
+      2. Calculate anomaly scores by looking into the difference bewteen an input instance and its counterpart generated from the latent space of the generator
   - 종류
     - AnoGAN, EBGAN ...
 - Predictability modeling
   - assumption
     - Normal instances are temporally more predictable than anomalies
   - general framework
-    - 1. Train a current/future instance prediction network
-    - 2. Calculate the difference between the predicted instance and the actual instance as anomaly score
+      1. Train a current/future instance prediction network
+      2. Calculate the difference between the predicted instance and the actual instance as anomaly score
   - 종류
     - Future frame prediction
 - Self-supervised classification
   - assumption
     - Normal instances are more consistent to self-supervised classifiers than anomalies
   - general framework
-    - 1. Apply different augmentation operations to the data
-    - 2. Learn a multi-class classification model using instances
-    - 3. Calculate the inconsistency of the instance to the model as anomaly score
+      1. Apply different augmentation operations to the data
+      2. Learn a multi-class classification model using instances
+      3. Calculate the inconsistency of the instance to the model as anomaly score
 
 #### summary    
 - 장점
@@ -148,27 +148,27 @@ Deep Learning for Anomaly Detection - Challenges, Methods tutorial 정리
   - assumption
     - Anomalies are distributed far from their closest neighbors while normal instances are located in dense neighborhoods
   - general framework
-    - 1. orginal data를 새로운 representation space로 map하는 feature mapping function $\pi$를 만든다
-    - 2. feature representation을 anomalies가 특정 reference instances와 거리가 더 커지도록 optimize한다.
-    - 3. 그렇게 만들어진 space에서 거리를 측정하여 anomaly score로 이용한다
+      1. orginal data를 새로운 representation space로 map하는 feature mapping function $\pi$를 만든다
+      2. feature representation을 anomalies가 특정 reference instances와 거리가 더 커지도록 optimize한다.
+      3. 그렇게 만들어진 space에서 거리를 측정하여 anomaly score로 이용한다
   - 종류
     - REPEN
 - One-class classification measure
   - assumption
     - All normal instances come from a single (abstract) class andn can be summarized by a compact model, to which anomalies do not conform
   - general framework
-    - 1. orginal data를 새로운 representation space로 map하는 feature mapping function $\pi$를 만든다
-    - 2. one-class classification loss를 이용하여 feature representation을 optimize한다
-    - 3. 그렇게 만들어진 space에서 one-class classification model을 통해 anomaly score를 구한다
+      1. orginal data를 새로운 representation space로 map하는 feature mapping function $\pi$를 만든다
+      2. one-class classification loss를 이용하여 feature representation을 optimize한다
+      3. 그렇게 만들어진 space에서 one-class classification model을 통해 anomaly score를 구한다
   - 종류
     - Deep SVDD
 - Cluster-based measure
   - assumption
     - Normal isntances have stronger adherence to clusters than anomalies
   - general framework
-    - 1. orginal data를 새로운 representation space로 map하는 feature mapping function $\pi$를 만든다
-    - 2. cluster-based loss를 이용하여 feature representation을 optimize한다
-    - 3. 그렇게 만들어진 space에서 cluster-based model을 통해 anomaly score를 구한다
+      1. orginal data를 새로운 representation space로 map하는 feature mapping function $\pi$를 만든다
+      2. cluster-based loss를 이용하여 feature representation을 optimize한다
+      3. 그렇게 만들어진 space에서 cluster-based model을 통해 anomaly score를 구한다
   - 종류
     - DAGMM
 #### summary
@@ -191,9 +191,9 @@ Deep Learning for Anomaly Detection - Challenges, Methods tutorial 정리
 - assumption
   - There exists an observable ordinal variable that captures some data abnormality
 - general framework
-  - 1. Definen the (synthtic) ordinal variable
-  - 2. Use the variable to define a surrogate loss functions for anomaly ranking and train the detection model
-  - 3. Given a test instance, the model firectly gives its anomaly score
+    1. Definen the (synthtic) ordinal variable
+    2. Use the variable to define a surrogate loss functions for anomaly ranking and train the detection model
+    3. Given a test instance, the model firectly gives its anomaly score
 - 종류
   - SDOR(Deep ordinal regression), PReNet(Pairwise relation prediction)
 
@@ -201,9 +201,9 @@ Deep Learning for Anomaly Detection - Challenges, Methods tutorial 정리
 - assumption
   - The imposed prior captures the underlying (ab)normality of the dataset
 - general framework
-  - 1. Impose a prior over the weight parameters of a network-based anomaly scoring measure, or over the expected anomaly scores
-  - 2. Optimize the anomaly ranking/classification with the prior
-  - 3. Given a test instance, the model directly gives its anomaly score
+    1. Impose a prior over the weight parameters of a network-based anomaly scoring measure, or over the expected anomaly scores
+    2. Optimize the anomaly ranking/classification with the prior
+    3. Given a test instance, the model directly gives its anomaly score
 - 종류
   - DevNet
 
@@ -211,9 +211,9 @@ Deep Learning for Anomaly Detection - Challenges, Methods tutorial 정리
 - assumption
   - Anomalies and normal instances are respectively low- and high-probability events
 - general framework
-  - 1. The probability of an event is modeled using a softmax function $p(x;\theta) = \frac{\exp (\tau(x;\theta))}{\sum_x \exp (\tau(x;\theta))}$
-  - 2. The parameters are then learned by a maximum likelihood function
-  - 3. Given a test instance, the model directly gives its anomaly score by the event probability
+    1. The probability of an event is modeled using a softmax function $p(x;\theta) = \frac{\exp (\tau(x;\theta))}{\sum_x \exp (\tau(x;\theta))}$
+    2. The parameters are then learned by a maximum likelihood function
+    3. Given a test instance, the model directly gives its anomaly score by the event probability
 - 종류
   - APE
 
@@ -222,8 +222,8 @@ Deep Learning for Anomaly Detection - Challenges, Methods tutorial 정리
   - Data instances that are approximated to anomalies can be effectively synthesized
   - All normal instances can be summarized by a discriminative one-class model
 - general framework
-  - 1. Generate artificial outliers
-  - 2. Train a GAN to discriminate whether a given instance is normal or an artificial outlier
+    1. Generate artificial outliers
+    2. Train a GAN to discriminate whether a given instance is normal or an artificial outlier
 - 종류
   - Fence GAN, OCAN
 

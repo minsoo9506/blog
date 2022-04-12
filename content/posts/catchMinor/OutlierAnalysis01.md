@@ -24,13 +24,13 @@ tags: ["Outlier Analysis", "Ensemble"]
 그렇다면 bias와 variance 모두를 고려하는 방법도 당연히 있을 것이다. 다양한 방법이 있겠지만 AOM 방법 [1] 에 대해서 알아보고자 한다. 간단하다. 
 
 ### AOM(Average-of-Maximum) method
-- 1. $m$개의 components가 있다고 한다면 이들을 각 $m/q$개의 buckets으로 나눈다. (각 bucket에는 $q$개의 components)
-- 2. 각 bucket 마다 maximum을 취한다.
-- 3. bucket들의 maximum score를 average한다.
+1. $m$개의 components가 있다고 한다면 이들을 각 $m/q$개의 buckets으로 나눈다. (각 bucket에는 $q$개의 components)
+2. 각 bucket 마다 maximum을 취한다.
+3. bucket들의 maximum score를 average한다.
 
 그 반대도 가능할 것이다. MOA!
 
 ## Related Paper
-- 1. Theoretical Foundations and Algorithms for Outlier Ensembles (2015)
-- 2. Outlier Ensembles: An Introduction (2017)
-- 3. Feature Bagging for Outlier Detection (2005)
+1. Theoretical Foundations and Algorithms for Outlier Ensembles (2015)
+2. Outlier Ensembles: An Introduction (2017)
+3. Feature Bagging for Outlier Detection (2005)

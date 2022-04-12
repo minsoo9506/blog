@@ -1,5 +1,5 @@
 ---
-title: "[OS] Virtual Memory Management"
+title: "[OS] Virtual Memory Management (1)"
 date: 2022-04-03T09:00:00+00:00
 draft: false
 categories: ["Computer Science"]
@@ -16,7 +16,7 @@ virtual memory를 다루는 방법들을 알아보자
 - page fault rate ($F(w)$)
     - page reference string: 프로세스 수행 중 참조한 페이지 번호 순서
       - $w = r_1 r_2...r_T$, $r_i$: 페이지 번호
-    - $F(w)=\frac{\text{# of page faults during } w}{|w|}$
+    - $F(w)=\frac{\text{num of page faults during } w}{\|w\|}$
 
 cost model을 page fault rate로 정했다면 이를 최소화하기 위해 노력해야한다. 이제 어떤 방법들이 있는지 알아보자.
 
@@ -97,10 +97,6 @@ page/segment를 어디에 적재할 것인가?
 - if 고부하 상태
   - 자원에 대한 경쟁이 심해져서 성능 저하
   - Thrashing(스레싱) 현상 발생: 과도한 page fault발생하는 현상
-
-Replacement 기법들에 대해 자세히 알아볼 차례
-
-## Replacement strategy 기법들
 
 ## Reference
 - [HPC Lab. KOREATECH 운영체제 강의](https://www.youtube.com/playlist?list=PLBrGAFAIyf5rby7QylRc6JxU5lzQ9c4tN)

@@ -15,8 +15,8 @@ Anomaly Detection과 관련한 분야 중 하나로 anomaly explanation이 있�
 
 ## Outlying aspect mining
 해당 방법론은 detector가 anomaly를 찾았을 때, 다른 normal data와 다른 부분(the most unusal aspects)을 찾으려고 하는 방법이다. 크게 아래같은 절차로 진행된다.
-- 1. anomaly detector를 통해 anomaly를 찾는다.
-- 2. anomaly와 관련한 the most outlying feature subspace를 찾는다.
+1. anomaly detector를 통해 anomaly를 찾는다.
+2. anomaly와 관련한 the most outlying feature subspace를 찾는다.
 
 따라서 단점은 detection과 explanation 단계가 서로 독립적이라는 것이다. 이제 접근방법을 2가지 정도 알아보자.
 
@@ -39,9 +39,9 @@ outlying aspects mining을 imbalanced binary classification에서 feature select
   
 ### Score-and-search approach
 - 방법
-  - 1. Define a measure of the outlyingness degree for a data point in any specified subspace
-  - 2. The outlyingness degree of the query object will be compared across all possible subspaces
-  - 3. The subspaces with the highest outlyingness degree will be selected for user further inspection
+    1. Define a measure of the outlyingness degree for a data point in any specified subspace
+    2. The outlyingness degree of the query object will be compared across all possible subspaces
+    3. The subspaces with the highest outlyingness degree will be selected for user further inspection
 
 다양한 모델과 방법론을 이용해서 outlierness degree가 가장 큰 값을 갖는 feature subspaces를 찾는다. 가능한 전체 경우의 수는 $2^d - 1$일 것이다.
 
