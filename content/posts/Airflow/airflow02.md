@@ -1,13 +1,21 @@
 ---
-title: "[Airflow] 기본 CLI 명령어"
+title: "[Airflow] 기본 구조, CLI 명령어"
 date: 2022-04-17T09:00:00+00:00
 draft: false
 categories: ["Airflow"]
 tags: ["Airflow"]
 ---
 
-Airflow의 기본적인 CLI 명령어를 정리
+Airflow의 기본적인 구조와 CLI 명령어를 정리
 <!--more-->
+## 구조
+- webserver
+- scheduler
+  - 설정한 시간에 맞춰 DAG를 실행할 수 있게 해줌
+- worker(excecutor)
+  - 실제 작업을 실행하는 주체
+- metaDB
+  - 작업관련 데이터들이 저장됨
 
 ## 명령어
 ### `db`
