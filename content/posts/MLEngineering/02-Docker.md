@@ -2,7 +2,7 @@
 title: "[Docker] 생활코딩 입문 수업 정리"
 date: 2021-12-03T13:02:00+09:00
 draft: false
-categories: ["MLOps"]
+categories: ["ML Engineering"]
 tags: ["Docker"]
 ---
 
@@ -44,8 +44,9 @@ minsoo/flaskapp           latest              ecad9ae45c3d        2 weeks ago   
 - image 삭제
   - `docker rmi image이름`
 
-도커 Host한에 독립적인 Container들이 존재하는 것이다. 따라서 Host의 port와 Container의 port를 연결해줘야 우리가 Container와 연결이 된다. 이를 port forwarding이라고 한다. 
+도커 Host한에 독립적인 Container들이 존재하는 것이다. 따라서 Host의 port와 Container의 port를 연결해줘야 우리가 Container와 연결이 된다. 이를 port forwarding이라고 한다.
+
 - `docker run -p 80:80 image이름` : docker host 80번과 container 80번 연결
 
 - 실행중인 도커 Container에 명령어 실행
-    - `docker exec container이름 [COMMAND]`
+  - `docker exec container이름 [COMMAND]`
