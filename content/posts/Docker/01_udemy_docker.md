@@ -3,7 +3,7 @@ title: "[Docker] Image와 Container"
 date: 2022-06-03T13:02:00+09:00
 draft: false
 categories: ["Docker"]
-tags: ["Docker"]
+tags: ["Docker", "Image", "Container"]
 ---
 
 Docker의 가장 기본적인 개념 (Image, Container)
