@@ -1,6 +1,6 @@
 ---
 title: "[Docker] Volume과 Bind Mount"
-date: 2022-06-25T09:02:00+09:00
+date: 2022-06-20T09:02:00+09:00
 draft: false
 categories: ["Docker"]
 tags: ["Docker", "Volume", "Bind Mount", "ARG", "ENV"]
